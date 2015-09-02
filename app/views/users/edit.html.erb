@@ -1,0 +1,22 @@
+</br>
+<div class="row">
+  <div class="small-4 small-centered large-4 large-centered columns">
+    <%= form_for @user do |f| %>
+      <%= f.label :name, "Name:" %>
+      <%= f.text_field :name, placeholder: @user.name %><br>
+      <%= f.label :username, "Username:" %>
+      <%= f.text_field :username, placeholder: @user.username %><br>
+      <%= f.label :password, "Password:" %>
+      <%= f.password_field :password %><br>
+      <%= f.label :password_confirmation, "Confirm Password:" %>
+      <%= f.password_field :password_confirmation %><br>
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email, placeholder: @user.email %><br>
+      <%= f.label :avatar, "Avatar link:" %>
+      <%= f.text_field :avatar, placeholder: @user.avatar %><br>
+      <%= f.submit%>
+    <%end%>
+
+  </div>
+
+</div>

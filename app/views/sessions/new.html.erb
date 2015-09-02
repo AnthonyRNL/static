@@ -1,0 +1,44 @@
+<h4>Have An Account? Login...</h4>
+
+<div class="login-wrapper">
+	<div class="small-6 small-centered columns">
+		<div class="row">
+			<p style="color: red"><%= flash[:error] %></p>
+
+			<%= form_tag(sessions_path) do %>
+				<%= text_field_tag :name, nil, placeholder: 'Enter Name' %><br/>
+				<%= password_field_tag :password, nil, placeholder: 'Password' %><br/>
+				<%= button_tag('Login') %>
+			<% end %>
+		</div>
+	</div>
+</div>
+		
+		<hr>
+		
+<h4>Don't have an account? Sign Up Now!!!</h4>
+<div class="login-wrapper">
+	<div class="small-6 small-centered columns">
+		<div class="row">
+			<section id="create-account">
+					<% if @user.errors.any? %>
+						<div id="error-explanation">
+							<p><%= pluralize(@user.errors.count, "error")%> prohibited this user from being saved:</p>
+							<ul>
+								<% @user.errors.full_messages.each do |message| %>
+								<li style="color: red"><%= message %></li>
+								<% end %>
+							</ul>
+						</div>
+					<% end %>
+
+					<%= form_for @user do |f| %>
+						<%= f.text_field :username, placeholder: 'Username' %><br/>
+						<%= f.password_field :password, placeholder: 'Password' %><br/>
+						<%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %><br/>
+						<%= f.button 'Signup' %>
+					<% end %>
+			</section>
+		</div>
+	</div>
+</div>

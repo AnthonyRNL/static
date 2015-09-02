@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+	text-align: center;
+}
+
+#posts-wrapper {
+	border: 1px solid black;
+	margin-bottom: 15px;
+	background-color: white;
+	border: 70px
+
+}
+.login-wrapper {
+	border: 1px solid black;
+	margin-bottom: 15px;
+	background-color: white;
+	border: 70px;
+}
+.post {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	margin: 0 0 5px 0;
+	padding: 10px;
+	// background-color: #66314B
+}
+#media-row {
+	width: 100%;
+	max-height: 500px;
+}
+
+#media-player-div{
+	border-left: 1px solid #000;
+	min-height:200px
+}
+#media-player {
+	height: 100% !important;
+	text-align: center
+}
+
+.disclaimer {
+	font-size: 9px;
+	border-top: 15px;
+	text-align: center;
+}
+
+.profpic {
+	width: 100px;
+}
+.hidden {
+	display: none;
+}
