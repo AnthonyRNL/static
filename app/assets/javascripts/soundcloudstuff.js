@@ -21,7 +21,7 @@ function initialize() {
 			var urlWanted = url || "https://youtu.be/a1Y73sPHKxw"
 			$target = document.getElementById('target')
 			embedurl = url.toString().replace('watch?v=', 'embed/')
-			$('<iframe id="media-player" height="100%" width="100%" src="' + embedurl + '" frameborder="0" allowfullscreen></iframe>').appendTo(target)
+			$('<iframe id="media-player" height="200" width="100%" src="' + embedurl + '" frameborder="0" allowfullscreen></iframe>').appendTo(target)
 			console.log($target)
 		}
 	}

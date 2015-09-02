@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@user = User.find(@post.user_id)
+		@comment = Comment.new
+		@comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id], avatar: params[:user_id])
 	end
 
 	def create
@@ -24,17 +26,10 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
-  def upvote
-    @post = Post.find(params[:id])
-    @post.upvote = @post.upvote + 1
-    @post.save
-    redirect_to posts_path
-  end
-
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :content, :youtubefile, :soundcloudfile, :user_id, :upvote, :artist, :genre, :media_selection)
+		params.require(:post).permit(:title, :content, :youtubefile, :soundcloudfile, :user_id, :upvote, :artist, :genre, :media_selection, :id)
 	end
 
 end
