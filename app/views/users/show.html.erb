@@ -1,9 +1,19 @@
-<div class="row">
-  <h1><%=@user.username%></h1>
-  <h4>Name: <%=@user.name%></h4>
-  <%= link_to "Edit", edit_user_path(@user.id)%>
-
-  <div class="profpic">
-    <img src="<%=@user.avatar%>"/>
-  </div>
+<h1>User Info Page</h1>
+<div id="edit-container">
+	<div class="row">
+	 <div class="small-10 small-centered columns">
+			<div class="inner-container-edit panel callout radius">
+			<div class="row">
+				<div class="small-6 columns">
+					<h4>Username: </h4><p class="edit-bold"><%=@user.username%></p>
+					<h4>Name: </h4><p><%=@user.name%></p>
+				</div>
+				<div class="profpic small-6 columns clearfix">
+					<img id="user-avatar-img right" src="<%=@user.avatar%>"/>
+				</div>	
+			</div>
+				<div id="edit-button-submit"><%= link_to 'Edit', edit_user_path(@user.id), class: 'button round' %></div>
+		 </div>
+		</div>
+	</div>
 </div>
