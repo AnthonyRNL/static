@@ -1,3 +1,7 @@
+<h1>Create a New Post!</h1>
+<div class="new-post-container row">
+	<div class="small-6 small-centered columns">
+		
 <%= form_for @post do |f| %>
 
 <!-- hidden_field_tag(:user_id, session[:user_id]) #need to check this-->
@@ -10,16 +14,25 @@
 <%= f.label :content, 'Body Content' %>
 <%= f.text_area :content, placeholder: 'Enter your body content here!' %>
 
-<%= f.label :soundfile, 'Soundcloud'%>
-<%= f.radio_button(:media_selection, '1')%><br/>
-<div id="soundcloud-input" class="hidden"><%= f.text_area :soundcloudfile, placeholder: 'Soundcloud Link' %></div>
+<div id="radio-row" class="row">
+	<div class="small-6 columns">
+		<span data-tooltip aria-haspopup="true" class="has-tip" title="At the soundcloud player you want to share, simply click 'Share' and copy and paste the URL into the text area"><%= f.label :soundfile, 'Soundcloud'%></span>
+		<%= f.radio_button(:media_selection, '1')%><br/>
+	</div>
 
-<%= f.label :soundfile, 'YouTube'%>
-<%= f.radio_button(:media_selection, '2')%>
-<div id="youtube-input" class="hidden"><%= f.text_area :youtubefile, placeholder: 'YouTube Link' %></div><br/>
-<%= f.submit %>
+	<div class="small-6 columns">
+		<span data-tooltip aria-haspopup="true" class="has-tip" title="Go to the Youtube page for the song you want, then you can either copy & paste the URL or the share URL."><%= f.label :soundfile, 'YouTube'%></span>
+			<%= f.radio_button(:media_selection, '2')%>
+	</div>
+	
+		</div>
+		<div id="soundcloud-input" class="hidden"><%= f.text_area :soundcloudfile, placeholder: 'Soundcloud Link' %></div>
+		<div id="youtube-input" class="hidden"><%= f.text_area :youtubefile, placeholder: 'YouTube Link' %></div><br/>
+		<%= f.submit %>
 
-<% end %>
+		<% end %>
+	</div>
+</div>
 
 <script> 
 	
