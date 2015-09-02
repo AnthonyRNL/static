@@ -40,10 +40,10 @@ a. User click on a link in the nav bar to **"Make a New Post"**
 #####Front-End Wireframe
 ######Welcome Page
 
-![welcome page](../wireframes/WelcomePage.png)
+![welcome page](public/wireframes/WelcomePage.png)
 
 ######Show Page
-![show page](../wireframes/ShowPage.png)
+![show page](public/wireframes/ShowPage.png)
 
 #####Database Design / ERD
 

@@ -1,5 +1,22 @@
-<h1>HELLLOOOO</h1>
-<%= link_to "Posts", posts_path %></br>
-<%= link_to "Make a New Post", new_post_path %></br>
-<%= link_to "LOGIN", login_path %></br>
-<%= link_to "LOGOUT", sessions_path, method: :delete %> 
+<div id="home-wrapper">
+	<%=image_tag("sa-banner.png", alt: "SA Banner", class: "banner-image")%>
+	<h3 id="welcome-slogan">Be heard through the static...</h3>
+	
+	<div class="row">
+		<div class="small-5 small-centered columns">
+			<div class="welcome-wrapper">
+				<h5>please choose an action below:</h5>
+				<div class="row">
+					<div class="small-10 small-centered columns">
+						<div id="welcome-links">
+							<%= link_to "Posts", posts_path %><br/>
+							<%= link_to "Make a New Post", new_post_path %><br/>
+							<%= link_to "LOGIN", login_path %><br/>
+							<%= link_to "LOGOUT", sessions_path, method: :delete %> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,10 +1,10 @@
 <script type="application/javascript">
 	var mediaNum = "<%= raw(@post.media_selection) %>"
 	console.log(mediaNum)
-	
+
 	var url = "<%= (@post.media_selection == "1")? @post.soundcloudfile : @post.youtubefile %>";
 	console.log(url)
-	
+
 </script>
 
 <div id="show-wrapper">
@@ -19,6 +19,7 @@
 	<div id="media-row" class="row">
 		<div class="small-12 medium-6 columns">
 			<h3 id="show-post-title">By: <%= @user.username %> </h3>
+			<h5><%= @post.content%></h5>
 		</div>
 		<div id="media-player-div" class="small-12 medium-6 columns">
 			<div id="target"></div>
@@ -27,18 +28,10 @@
 
 	<hr>
 
-	<div class="row">
-		<div class="small-6 small-centered columns">
-			<h2>Body Title</h2>
-		</div>
-		
-		<div class="small-12 columns">
-			<section>
-				<p><%= @post.content %></p>
-			</section>
-		</div>
-	</div>
+	
 </div>
+</div>
+
 </div>
 <div class="comments-wrapper">
 	<div id="comment-inner-wrapper">
@@ -67,3 +60,4 @@
     </div>
 
 </div>
+
