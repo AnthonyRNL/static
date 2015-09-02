@@ -17,10 +17,29 @@
 body {
 	font-family: 'Quicksand', sans-serif;
 }
-
 h1,h2,h3,h4,h5 {
 	text-align: center;
+	font-family: 'Quicksand', sans-serif;
 }
+
+//Welcome idex
+.banner-image {
+	width: 100%;
+}
+#welcome-links {
+	text-align: center;
+}
+.welcome-wrapper {
+	border: 1px solid black;
+	margin-bottom: 15px;
+	background-color: #E8E8E8;
+	border: 70px;
+	border-radius: 10px;
+}
+#welcome-slogan {
+	margin: 25px 0 25px 0 !important;
+}
+
 
 #posts-wrapper {
 	border: 1px solid black;
