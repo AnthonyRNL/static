@@ -60,6 +60,7 @@
 				<% @comments.each do |c|%>        
                 <h6><%= c.user.username %></h6>
                 <p><%= c.content %></p>
+                <h7 class="date"><%=c.created_at%></h7>
 				<% end %>
             </div>
         </div>    
