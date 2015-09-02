@@ -22,6 +22,10 @@ class PostsController < ApplicationController
 		redirect_to '/posts/'+@post[:id].to_s
 	end
 
+  def topten
+    @posts = Post.order('updated_at DESC').first(10)
+  end
+
 	def new
 		@post = Post.new
 	end
