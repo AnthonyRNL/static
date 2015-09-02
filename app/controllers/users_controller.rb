@@ -21,11 +21,16 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     puts params
-    if @user.update_attributes user_params
-      flash[:notice] = "You is succesfully updated"
-      redirect_to user_path
+    if session[:user_id] == @user.id
+      if @user.update_attributes user_params
+        flash[:notice] = "You is succesfully updated"
+        redirect_to user_path
+      else
+        flash[:error] = @user.errors.full_messages[0]
+        redirect_to user_path
+      end
     else
-      flash[:error] = @user.errors.full_messages[0]
+      flash[:danger] = "YOU ARE NOT THE USER, BEGONE"
       redirect_to user_path
     end
   end
