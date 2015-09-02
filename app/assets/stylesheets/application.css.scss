@@ -116,7 +116,23 @@ h1,h2,h3,h4,h5 {
 	font-size: 10px;
 }
 
+
 .userposts {
 	border-top: 1px solid black;
 	border_bottom: 1px solid black;
+//New Post Form
+.new-post-container {
+	margin-top: 20px;
+	text-align: left;
 }
+#radio-row {
+	margin-top: 20px;
+	text-align: center;
+}
+span label {
+	font-weight: 700;
+	font-size: 18px;
+}
+#new-button-submit {
+	text-align: center;
+	padding: 0 45px 0 45px;
