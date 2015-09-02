@@ -42,26 +42,27 @@
 </div>
 <div class="comments-wrapper">
 	<div id="comment-inner-wrapper">
-			<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Leave a comment</a>
-			<% link_to "leave a comment", comments_path%>
-			<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
-  			<%= form_for @comment do |f| %>
-  			<%= f.label :content, 'What do you think?' %>
-			<%= f.text_field :content, placeholder: 'Write your comments here...', :size => 150 %> <br>
-			<%= f.hidden_field :user_id, :value => session[:username]%>
-			<%= f.hidden_field :post_id, :value => @post.id%>
-			<%= f.submit %>
-			<%end%>
-			</div>
+		<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Leave a comment</a>
+		<% link_to "leave a comment", comments_path%>
+		<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
+
+			<%= form_for @comment do |f| %>
+			<%= f.label :content, 'What do you think?' %>
+		<%= f.text_field :content, placeholder: 'Write your comments here...', :size => 150 %> <br>
+		<%= f.hidden_field :user_id, :value => session[:user_id]%>
+		<%= f.hidden_field :post_id, :value => @post.id%>
+		<%= f.submit %>
+		<%end%>
+		</div>
 	</div>
-                <div class="row">
-                    <div class="small-9 small-centered columns">
-						<% @comments.each do |comment|%>        
-                        <h6><%=@user.username %></h6>
-                        <p><%= comment.content %></p>
-        				<% end %>
-                    </div>
-                </div>    
+        <div class="row">
+            <div class="small-9 small-centered columns">
+				<% @comments.each do |c|%>        
+                <h6><%= c.user.username %></h6>
+                <p><%= c.content %></p>
+				<% end %>
             </div>
+        </div>    
+    </div>
 
 </div>

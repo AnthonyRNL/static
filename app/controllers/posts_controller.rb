@@ -17,8 +17,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@user = User.find(@post.user_id)
 		@comment = Comment.new
-		@comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id])
-
+		@comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id], avatar: params[:user_id])
 	end
 
 	def create

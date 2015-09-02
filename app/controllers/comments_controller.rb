@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment = Comment.where({post_id: params[:id]})
+	@comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id], avatar: params[:user_id])
     @user = User.find(@comment.user_id)
   end
 
