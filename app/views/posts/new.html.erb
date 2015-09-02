@@ -28,7 +28,9 @@
 		</div>
 		<div id="soundcloud-input" class="hidden"><%= f.text_area :soundcloudfile, placeholder: 'Soundcloud Link' %></div>
 		<div id="youtube-input" class="hidden"><%= f.text_area :youtubefile, placeholder: 'YouTube Link' %></div><br/>
-		<%= f.submit %>
+		
+		<div id="new-button-submit"><%= f.submit class: 'button  large  expand round' %></div>
+		
 
 		<% end %>
 	</div>
