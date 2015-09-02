@@ -61,10 +61,35 @@ h1,h2,h3,h4,h5 {
 	border-top: 15px;
 	text-align: center;
 }
-
-.profpic {
-	width: 100px;
-}
 .hidden {
 	display: none;
+}
+
+//user show page
+.inner-container-edit {
+	background-color: lightgray;
+	margin-top: 10px;
+	border-bottom: 0;
+	width: 100% !important;
+}
+.inner-container-edit h4 {
+	display: inline;
+}
+#edit-container {
+	background-color: lightgrey;
+	margin: 25px 200px 25px 200px;
+	border-radius: 40px;
+}
+#user-avatar-img {
+	max-width: 200px;
+}
+.edit-bold {
+	font-weight: 600;
+}
+.profpic {
+	height: 100%;
+	width: 120px;
+}
+#edit-button-submit {
+	text-align: center;
 }
