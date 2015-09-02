@@ -5,12 +5,7 @@ class PostsController < ApplicationController
 	#before_action :authenticate
 
 	def index
-
-		if params[:user_id]
-			@posts = Post.where({user_id: params[:user_id], avatar: params[:user_id]})
-		else
-			@posts = Post.all
-		end
+			@posts = Post.order('upvote DESC')
 	end
 
 	def show
