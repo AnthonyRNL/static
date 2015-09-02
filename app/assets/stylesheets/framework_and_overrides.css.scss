@@ -4,9 +4,12 @@
 // override for the 'Home' navigation link
 .top-bar .name {
   font-size: rem-calc(13);
-  line-height: 45px; }
+  line-height: 45px; 
+	font-family: 'Quicksand', sans-serif !important;
+}
 .top-bar .name a {
   font-weight: normal;
+	font-family: 'Quicksand', sans-serif !important;
   color: white;
   padding: 0 15px; }
 

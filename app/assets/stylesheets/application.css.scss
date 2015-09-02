@@ -46,13 +46,27 @@ h1,h2,h3,h4,h5 {
 	margin-bottom: 15px;
 	background-color: white;
 	border: 70px
-
 }
 .login-wrapper {
 	border: 1px solid black;
 	margin-bottom: 15px;
 	background-color: white;
 	border: 70px;
+}
+.inner-login-wrapper{
+	background-color: #E8E8E8 ;
+	padding: 10px 40px 10px 40px;
+	border-radius: 8px;
+}
+.login-header{
+	font-weight: 700;
+}
+.login-header-bold{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+#user_username{
+	margin-top: 15px;
 }
 .post {
 	border-top: 1px solid gray;
