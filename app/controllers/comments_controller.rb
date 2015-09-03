@@ -11,12 +11,13 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    binding.pry
   end
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update(Comment.params)
-    redirect_to post_path(@comment)
+    @comment.update(comment_params)
+    redirect_to post_path(@comment.post_id)
   end
 
   def delete
@@ -26,7 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-	@comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id], avatar: params[:user_id])
+	  @comments = Comment.where({post_id: params[:id]}, user_id: params[:user_id], avatar: params[:user_id]).order("updated_at DESC")
     @user = User.find(@comment.user_id)
   end
 
