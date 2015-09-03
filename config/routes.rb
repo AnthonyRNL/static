@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
     resources :comments
+    resources :searches
 
 
   # Example resource route with options:

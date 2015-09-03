@@ -20,6 +20,12 @@
 
 			<!-- Right Nav Section -->
 			<ul class="right">
+				<li><%= form_tag("/searches", method: "get") do %>
+						<%= label_tag(:q, "Search a song")%>
+						<%= text_field_tag(:q)%>
+						<%= submit_tag("enter")%>
+					<%end%>
+				</li>
 				<li><a><%if session[:user_id] %>
         <%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]) %>
         <% else%>
