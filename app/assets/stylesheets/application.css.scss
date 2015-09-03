@@ -40,7 +40,35 @@ h1,h2,h3,h4,h5 {
 	margin: 25px 0 25px 0 !important;
 }
 
-
+//Main Posts Page
+#posts-inner-wrapper {
+	text-align: center;
+}
+.index-avatar{
+	max-height: 100px;
+}
+.upvote-icon {
+	max-height: 20px;
+}
+.upvote-number {
+	margin-top: 15px;
+}
+.upvote-wrapper {
+	text-align: center;
+}
+.post {
+	border-top: 1px solid gray;
+	//border-bottom: 1px solid gray;
+	padding: 10px;
+	// background-color: #66314B
+}
+.posts-row {
+	text-align: left;
+}
+.post-content {
+	margin-left: 7px;
+	margin-right: 7px;
+}
 #posts-wrapper {
 	border: 1px solid black;
 	margin-bottom: 15px;
@@ -64,16 +92,6 @@ h1,h2,h3,h4,h5 {
 .login-header-bold{
 	margin-top: 15px;
 	margin-bottom: 15px;
-}
-#user_username{
-	
-}
-.post {
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	margin: 0 0 5px 0;
-	padding: 10px;
-	// background-color: #66314B
 }
 #media-row {
 	width: 100%;
