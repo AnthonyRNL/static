@@ -4,7 +4,6 @@
 
 	var url = "<%= (@post.media_selection == "1")? @post.soundcloudfile : @post.youtubefile %>";
 	console.log(url)
-
 </script>
 
 <div id="show-wrapper">
@@ -18,27 +17,37 @@
 
 		<div id="media-row" class="row">
 			<div class="small-12 medium-6 columns">
-				<h3 id="show-post-title">By: <%= @user.username %> </h3>
-				<h5><%= @post.content%></h5>
-				<%= link_to "Edit", edit_post_path %>
-				<%= link_to "Delete", post_path, method: :delete %>
+				<div class="row">
+					<div class="small-6 columns">
+						<h3 id="show-post-title">By: <%= @user.username %> </h3>
+					</div>
+					<div class="small-6 columns">
+						<img class="index-avatar" src="<%= @user.avatar %>" alt="user avatar">
+					</div>
+				</div>
+				<hr style="color: black;">
+				<p><%= @post.content%></p>
+				<div class="row">
+					<div class="small-6 columns">
+						<%= link_to "Edit", edit_post_path, class: 'button tiny right radius success'%>
+					</div>
+					<div class="small-6 columns">
+						<%= link_to 'Destroy', post_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'success left button tiny radius' %>
+					</div>
+				</div>
 			</div>
 			<div id="media-player-div" class="small-12 medium-6 columns">
 				<div id="target"></div>
 			</div>
-		</div>
-
+		</div>	
 		<hr>
 	</div>
-
 </div>
 
-</div>
 <div class="comments-wrapper">
 	<div id="comment-inner-wrapper">
-		<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Leave a comment</a>
+		<a class="button round" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Leave a comment</a>
 		<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
-
 			<%= form_for @comment do |f| %>
 			<%= f.label :content, 'What do you think?' %>
 		<%= f.text_field :content, placeholder: 'Write your comments here...', :size => 150 %> <br>
@@ -48,15 +57,18 @@
 		<%end%>
 		</div>
 	</div>
-        <div class="row">
-            <div class="small-9 small-centered columns">
-				<% @comments.each do |c|%>
-                <h6><%= c.user.username %></h6>
-                <p><%= c.content %></p>
-                <h7 class="date"><%=c.created_at%></h7>
-				<% end %>
-            </div>
-        </div>
-    </div>
+	<div class="comment-wrapper">
+		<% @comments.each do |c|%>
+			<div class="comment-post row">
+				<div class="small-9 small-centered columns">
+					<h6><%= c.user.username %></h6>
+					<p><%= c.content %></p>
+					<p class="date">Posted: <%= c.created_at %></p>
+				</div>
+			</div>
+		<% end %>
+	</div>
 
+	
 </div>
+
