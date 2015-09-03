@@ -14,29 +14,29 @@
 		</div>
 	</div>
 
-<div id="post-inner-wrapper">
+	<div id="post-inner-wrapper">
 
-	<div id="media-row" class="row">
-		<div class="small-12 medium-6 columns">
-			<h3 id="show-post-title">By: <%= @user.username %> </h3>
-			<h5><%= @post.content%></h5>
+		<div id="media-row" class="row">
+			<div class="small-12 medium-6 columns">
+				<h3 id="show-post-title">By: <%= @user.username %> </h3>
+				<h5><%= @post.content%></h5>
+				<%= link_to "Edit", edit_post_path %>
+				<%= link_to "Delete", post_path, method: :delete %>
+			</div>
+			<div id="media-player-div" class="small-12 medium-6 columns">
+				<div id="target"></div>
+			</div>
 		</div>
-		<div id="media-player-div" class="small-12 medium-6 columns">
-			<div id="target"></div>
-		</div>
+
+		<hr>
 	</div>
 
-	<hr>
-
-	
-</div>
 </div>
 
 </div>
 <div class="comments-wrapper">
 	<div id="comment-inner-wrapper">
 		<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Leave a comment</a>
-		<% link_to "leave a comment", comments_path%>
 		<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
 
 			<%= form_for @comment do |f| %>
@@ -50,14 +50,13 @@
 	</div>
         <div class="row">
             <div class="small-9 small-centered columns">
-				<% @comments.each do |c|%>        
+				<% @comments.each do |c|%>
                 <h6><%= c.user.username %></h6>
                 <p><%= c.content %></p>
                 <h7 class="date"><%=c.created_at%></h7>
 				<% end %>
             </div>
-        </div>    
+        </div>
     </div>
 
 </div>
-
