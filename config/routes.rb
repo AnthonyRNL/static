@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/login' => 'sessions#new'
   get '/posts/topten' => "posts#topten"
+  get '/searches/food' => "searches#food"
+  get '/searches/:id' => "searches#new"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
     resources :comments
+    resources :searches
 
 
   # Example resource route with options:

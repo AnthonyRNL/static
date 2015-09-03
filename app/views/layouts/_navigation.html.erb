@@ -20,6 +20,12 @@
 
 			<!-- Right Nav Section -->
 			<ul class="right">
+					<form action="/searches" method="GET" class="search">
+							<li><input type="text" placeholder="Search a song" name="keyterm"></li>
+							<li><input type="submit"></li>
+
+					</form>
+					<li class="divider"></li>
 				<li><a><%if session[:user_id] %>
         <%= link_to User.find(session[:user_id]).username, user_path(session[:user_id]) %>
         <% else%>
