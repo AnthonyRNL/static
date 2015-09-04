@@ -6,7 +6,7 @@ class SearchesController < ApplicationController
   end
 
   def food
-    foodsearch = HTTParty.get("http://food2fork.com/api/search?key=a3fdceb41ffc20a80fd94132ff3df5d3&sort=t")
+    foodsearch = HTTParty.get("http://food2fork.com/api/search?key=this is a key&sort=t")
     list = JSON.parse(foodsearch)["recipes"]
     rand1 = rand(0...list.length)
     title = list[rand1]["title"]
